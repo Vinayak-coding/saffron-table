@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Bill | Saffron Table</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body data-page="bill">
+  <header class="site-header"><div class="wrap"><nav aria-label="Main navigation"><a class="brand" href="website.html">saffron<span>table</span>.</a><div class="links"><a href="menu.html">All menus</a><a href="cart.html">Cart <span data-cart-count>(0)</span></a></div></nav></div></header>
+  <main class="wrap">
+    <section class="page-intro"><div class="kicker">Thank you for your order</div><h1>Your final<br>bill.</h1><p>Your order is confirmed. Here’s the itemized total.</p></section>
+    <section class="bill-layout"><div class="bill-paper"><div class="kicker">Saffron Table</div><h2>Order receipt</h2><p class="bill-meta">18 Market Street · <span data-bill-date></span></p><div class="bill-items" data-bill-items></div><div class="bill-total"><span>Total</span><span class="price" data-bill-total>₹0</span></div><div class="bill-actions"><button class="checkout-btn" type="button" data-print-bill>Print bill</button><a class="checkout-btn" href="menu.html">Order again</a></div></div></section>
+  </main>
+  <footer><div class="wrap"><p>© <span data-current-year>2026</span> Saffron Table · 18 Market Street</p><a href="mailto:hello@saffrontable.example">hello@saffrontable.example ↗</a></div></footer>
+  <script src="website.js"></script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Saffron Table | Fresh food, simply made</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+	<style>
+		:root {
+			--cream: #fff9ef;
+			--ink: #2d2620;
+			--muted: #756a60;
+			--tomato: #d95136;
+			--gold: #f2b84b;
+			--sage: #dce8d8;
+			--line: #e8ded1;
+		}
+
+		* { box-sizing: border-box; }
+		html { scroll-behavior: smooth; }
+		body { margin: 0; background: var(--cream); color: var(--ink); font-family: "DM Sans", sans-serif; }
+		.wrap { width: min(1120px, calc(100% - 48px)); margin: auto; }
+		nav { height: 82px; display: flex; align-items: center; justify-content: space-between; }
+		.brand { color: var(--ink); text-decoration: none; font: 700 1.4rem "Fraunces", serif; }
+		.brand span { color: var(--tomato); }
+		.links { display: flex; gap: 28px; align-items: center; }
+		.links a { color: var(--muted); font-size: .9rem; text-decoration: none; }
+		.links a:hover { color: var(--tomato); }
+		.order { color: #fff !important; background: var(--tomato); padding: 12px 18px; border-radius: 4px; }
+		.order:hover { background: var(--ink); }
+
+		.hero { display: grid; grid-template-columns: .92fr 1.08fr; gap: 70px; align-items: center; min-height: 560px; padding: 58px 0 75px; }
+		.kicker { color: var(--tomato); font-size: .75rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }
+		h1, h2, h3 { font-family: "Fraunces", serif; }
+		h1 { font-size: clamp(3.2rem, 7vw, 5.8rem); line-height: .96; letter-spacing: -.05em; margin: 16px 0 24px; }
+		h1 span { color: var(--tomato); }
+		.hero-copy { color: var(--muted); line-height: 1.7; max-width: 390px; margin: 0 0 30px; }
+		.primary { display: inline-block; color: #fff; background: var(--ink); border-radius: 4px; padding: 14px 20px; text-decoration: none; font-weight: 700; font-size: .9rem; }
+		.primary:hover { background: var(--tomato); }
+		.hero-photo { position: relative; height: 420px; border-radius: 50% 50% 5px 5px; overflow: hidden; background: var(--sage); }
+		.hero-photo img { width: 100%; height: 100%; object-fit: cover; }
+		.badge { position: absolute; right: 24px; bottom: 24px; width: 105px; height: 105px; display: grid; place-items: center; padding: 12px; border-radius: 50%; background: var(--gold); color: var(--ink); text-align: center; font-size: .74rem; font-weight: 700; line-height: 1.35; transform: rotate(8deg); }
+
+		.announcement { border-block: 1px solid var(--line); padding: 18px 0; display: flex; justify-content: space-between; gap: 20px; color: var(--muted); font-size: .9rem; }
+		.announcement strong { color: var(--ink); }
+		.menu { padding: 95px 0 110px; }
+		.section-top { display: flex; justify-content: space-between; align-items: end; margin-bottom: 34px; gap: 20px; }
+		h2 { font-size: clamp(2.4rem, 4vw, 3.7rem); line-height: 1; letter-spacing: -.04em; margin: 10px 0 0; }
+		.section-top p { max-width: 300px; color: var(--muted); line-height: 1.6; font-size: .9rem; margin: 0; }
+		.menu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+		.dish { border: 1px solid var(--line); background: #fffdf9; padding: 12px 12px 20px; transition: transform .2s, box-shadow .2s; }
+		.dish:hover { transform: translateY(-5px); box-shadow: 0 12px 22px rgba(92, 53, 27, .1); }
+		.dish img { display: block; width: 100%; aspect-ratio: 1.25; object-fit: cover; }
+		.dish-info { display: flex; justify-content: space-between; align-items: start; gap: 12px; padding: 14px 6px 0; }
+		h3 { font-size: 1.3rem; margin: 0 0 7px; }
+		.dish p { color: var(--muted); font-size: .82rem; line-height: 1.45; margin: 0; }
+		.price { color: var(--tomato); font-weight: 700; white-space: nowrap; }
+		.add-dish { border: 1px solid var(--line); background: transparent; color: var(--ink); cursor: pointer; font: 700 .78rem "DM Sans", sans-serif; margin: 16px 6px 0; padding: 9px 12px; }
+		.add-dish:hover, .add-dish[aria-pressed="true"] { background: var(--tomato); border-color: var(--tomato); color: #fff; }
+		.order-summary { align-items: center; background: var(--sage); display: flex; justify-content: space-between; gap: 18px; margin-top: 22px; padding: 16px 18px; }
+		.order-summary p { color: var(--ink); font-size: .9rem; margin: 0; }
+		.order-summary strong { color: var(--tomato); }
+		.order-summary a { color: var(--ink); font-size: .82rem; font-weight: 700; text-decoration: underline; }
+		footer { background: var(--ink); color: var(--cream); padding: 28px 0; }
+		footer .wrap { display: flex; justify-content: space-between; gap: 20px; align-items: center; }
+		footer p { color: #cfc4b6; margin: 0; font-size: .82rem; }
+		footer a { color: var(--gold); text-decoration: none; font-size: .86rem; }
+
+		@media (max-width: 720px) {
+			.wrap { width: min(100% - 32px, 560px); }
+			nav { height: 70px; }
+			.links a:not(.order) { display: none; }
+			.hero { display: flex; flex-direction: column; gap: 38px; padding: 54px 0 68px; align-items: stretch; }
+			.hero-photo { height: 340px; }
+			.announcement { display: block; line-height: 1.8; }
+			.announcement strong { display: block; }
+			.menu { padding: 70px 0 78px; }
+			.section-top { display: block; }
+			.section-top p { margin-top: 18px; }
+			.menu-grid { grid-template-columns: 1fr; }
+			.order-summary { align-items: flex-start; flex-direction: column; }
+			footer .wrap { align-items: flex-start; flex-direction: column; }
+		}
+	</style>
+</head>
+<body>
+	<header class="wrap">
+		<nav aria-label="Main navigation">
+			<a class="brand" href="#home">saffron<span>table</span>.</a>
+			<div class="links">
+				<a href="menu.html">Menu</a>
+				<a href="favorites.html">Favorites</a>
+				<a href="cart.html">Cart <span data-cart-count>(0)</span></a>
+				<a class="order" href="about.html">Our story</a>
+			</div>
+		</nav>
+	</header>
+
+	<main id="home">
+		<section class="hero wrap" id="story">
+			<div>
+				<div class="kicker">Good food, good mood</div>
+				<h1>Fresh from<br>our <span>table</span><br>to yours.</h1>
+				<p class="hero-copy">Seasonal comfort food made with bright ingredients, generous portions, and a little extra love.</p>
+				<a class="primary" href="#menu">Explore today's menu</a>
+			</div>
+			<div class="hero-photo">
+				<img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1000&q=85" alt="Colorful fresh salad in a bowl">
+				<div class="badge">SEASONAL<br>INGREDIENTS<br>EVERY DAY</div>
+			</div>
+		</section>
+
+		<div class="announcement"><div class="wrap"><strong>Lunch is served 11:30–3:00</strong> &nbsp; Walk-ins welcome, good company encouraged.</div></div>
+
+		<section class="menu wrap" id="menu">
+			<div class="section-top">
+				<div><div class="kicker">A few favourites</div><h2>On the menu</h2></div>
+				<p>Our menu changes with the market. These are the dishes that keep people coming back.</p>
+			</div>
+			<div class="menu-grid">
+				<article class="dish" data-product data-id="garden-bowl" data-name="Garden bowl" data-price="340" data-description="Greens, roasted roots, herbs, lemon tahini.">
+					<img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=700&q=85" alt="Rainbow vegetable salad">
+					<div class="dish-info"><div><h3>Garden bowl</h3><p>Greens, roasted roots, herbs, lemon tahini.</p></div><div class="price">₹340</div></div>
+					<button class="add-dish" type="button" data-name="Garden bowl" data-price="340">Add to order</button>
+				</article>
+				<article class="dish" data-product data-id="sunday-pasta" data-name="Sunday pasta" data-price="520" data-description="Hand-cut ribbons, slow tomato, basil, parmesan.">
+					<img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=700&q=85" alt="Pasta with tomatoes and herbs">
+					<div class="dish-info"><div><h3>Sunday pasta</h3><p>Hand-cut ribbons, slow tomato, basil, parmesan.</p></div><div class="price">₹520</div></div>
+					<button class="add-dish" type="button" data-name="Sunday pasta" data-price="520">Add to order</button>
+				</article>
+				<article class="dish" data-product data-id="golden-granola" data-name="Golden granola" data-price="260" data-description="Toasted oats, local fruit, yogurt, honey.">
+					<img src="https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?auto=format&fit=crop&w=700&q=85" alt="Fresh fruit and yogurt bowl">
+					<div class="dish-info"><div><h3>Golden granola</h3><p>Toasted oats, local fruit, yogurt, honey.</p></div><div class="price">₹260</div></div>
+					<button class="add-dish" type="button" data-name="Golden granola" data-price="260">Add to order</button>
+				</article>
+			</div>
+			<div class="order-summary" aria-live="polite">
+				<p><strong id="order-count">0 items</strong> selected <span id="order-total">· Total ₹0</span></p>
+				<a href="mailto:hello@saffrontable.example?subject=Table%20booking">Book your table →</a>
+			</div>
+		</section>
+	</main>
+
+	<footer>
+		<div class="wrap"><p>© <span id="current-year">2024</span> Saffron Table · 18 Market Street</p><a href="mailto:hello@saffrontable.example">hello@saffrontable.example ↗</a></div>
+	</footer>
+	<script src="website.js"></script>
+</body>
+</html>
